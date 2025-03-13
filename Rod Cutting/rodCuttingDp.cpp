@@ -8,7 +8,7 @@ int rodCutting(vector<int> price, int n){
 
     for(int i=1; i<n+1; i++){
         for(int j=0; j<i; j++){
-            dp[i] = max(dp[i], price[i]+dp[i-j-1]);
+            dp[i] = max(dp[i], price[j]+dp[i-j-1]);
         }
     }
 
