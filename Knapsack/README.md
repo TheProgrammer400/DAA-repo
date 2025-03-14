@@ -80,3 +80,12 @@ Given `N` items, each with a specific **weight** and **value**, and a knapsack w
 2. **Iterate** through the sorted list and pick as much of the highest ratio item as possible.
 3. If an item **can't be taken fully**, take a **fraction** that fits in the remaining capacity.
 4. **Continue** until the knapsack is **full**.
+
+### Breakdown of The Code (Fractional Knapsack)
+
+- The items are sorted in **descending order of the value/weight ratio**.
+- The knapsack is filled greedily:
+    - If the item fits completely, it is taken.
+    - Otherwise, a fraction is taken to fill it completely.
+
+**Time Complexity**: `O(N log N)` (due to sorting) + `O(N)` (for picking items) → `O(N log N)`
