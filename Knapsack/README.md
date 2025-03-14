@@ -50,3 +50,18 @@ value[] = {3, 4, 5, 6}
 - Take items with weights **2 and 3** (values **3 + 4 = 7**).
 - Can't take item with weight **4 or 5** as it exceeds the limit.
 - **Max value** that can be obtained = **7**.
+
+## Breakdown of The Code (0/1 Knapsack)
+
+In the **0/1 Knapsack Problem**, we iterate through the **sorted** weight array and check for each weight whether it can fit within the given capacity. If adding the current item does not exceed the knapsack's limit, we update the value at that position using the formula:
+
+```C++
+dp[i][w] = max(dp[i−1][w], value[i−1] + dp[i−1][w − weight[i−1]])
+```
+
+This means:
+
+- If we **don't take** the item, the value remains the same as `dp[i-1][w]`.
+- if we **take** the item, we add its value to `dp[i-1][w - weight[i-1]]` and take the maximum of the two cases.
+
+This ensures that at each step, we optimize the selection without exceeding the weight limit. By filling the `dp` table, the final answer is stored at `dp[N][W]`, representing the maximum value achievable with the given weight capacity.
