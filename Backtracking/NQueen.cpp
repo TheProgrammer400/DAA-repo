@@ -57,6 +57,14 @@ void NQueen(vector<vector<int>> &board, int row, int n){
     }
 }
 
+
 int main(){
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    vector<vector<int>> board(n, vector<int>(n, 0));
+
+    NQueen(board, 0, n);
     return 0;
 }
