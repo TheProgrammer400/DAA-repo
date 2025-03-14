@@ -65,3 +65,18 @@ This means:
 - if we **take** the item, we add its value to `dp[i-1][w - weight[i-1]]` and take the maximum of the two cases.
 
 This ensures that at each step, we optimize the selection without exceeding the weight limit. By filling the `dp` table, the final answer is stored at `dp[N][W]`, representing the maximum value achievable with the given weight capacity.
+
+
+
+## Fractional Knapsack Problem
+
+### Problem Statement
+
+Given `N` items, each with a specific **weight** and **value**, and a knapsack with a **maximum weight capacity**, the objective is to **maximize the total value** that can be carried. Unlike the **0/1 Knapsack** problem, where items can only be **fully taken or not taken at all**, here we can take **fractions of an item**.
+
+### Approach
+
+1. **Sort** the items based on their **value-to-weight ratio** in **desending order**.
+2. **Iterate** through the sorted list and pick as much of the highest ratio item as possible.
+3. If an item **can't be taken fully**, take a **fraction** that fits in the remaining capacity.
+4. **Continue** until the knapsack is **full**.
