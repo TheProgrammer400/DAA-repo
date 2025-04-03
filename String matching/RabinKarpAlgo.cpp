@@ -52,14 +52,14 @@ void rabinKarp(string text, string pattern) {
 
         // Rolling hash: Remove first character, add next character
         if(i < n - m) {
-            textHash = (textHash - text[i]) / PRIME + text[i + m] * primePow;
+            textHash = (textHash - (text[i] * primePow)) / PRIME + text[i + m];
         }
     }
 }
 
 int main() {
     string text = "abracadabra";
-    string pattern = "abra";
+    string pattern = "abra"; 
     
     rabinKarp(text, pattern);
     
