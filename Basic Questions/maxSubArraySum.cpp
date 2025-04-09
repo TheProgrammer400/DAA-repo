@@ -19,7 +19,7 @@ SubArray crossingSum(vector<int> &arr, int low, int mid, int high){
     int maxLeft = 0;
     int maxRight = 0;
 
-    for(int i=mid; i>=0; i--){
+    for(int i=mid; i>=low; i--){
         sum = sum + arr[i];
 
         if (sum > leftSum){
