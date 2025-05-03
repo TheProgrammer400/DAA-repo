@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 
-int LCS(string s1, string s2){
+string LCS(string s1, string s2){
     int n = s1.length();
     int m = s2.length();
 
@@ -19,11 +19,29 @@ int LCS(string s1, string s2){
         }
     } 
 
-    return dp[n][m];
+    // Now backtrack to build the actual LCS string
+    int i = n, j = m;
+    string lcs = "";
+
+    while(i > 0 && j > 0){
+        if(s1[i-1] == s2[j-1]){
+            lcs += s1[i-1]; // Add matching character
+            i--;
+            j--;
+        } else if(dp[i-1][j] > dp[i][j-1]){
+            i--;
+        } else {
+            j--;
+        }
+    }
+
+    reverse(lcs.begin(), lcs.end()); // Since we built it backwards
+    return lcs;
 }
 
 int main() {
-    string s1 = "abcde", s2 = "ace";
-    cout << "LCS length: " << LCS(s1, s2) << endl;
+    string s1 = "ACDBE";
+    string s2 = "ABCDE";
+    cout<<"LCS: "<<LCS(s1, s2)<<endl;
     return 0;
 }

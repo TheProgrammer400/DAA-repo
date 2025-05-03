@@ -3,6 +3,7 @@
         "stdio.h": "c",
         "vector": "cpp",
         "unistd.h": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "algorithm": "cpp"
     }
 }
