@@ -4,6 +4,7 @@
         "vector": "cpp",
         "unistd.h": "c",
         "iostream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "stack": "cpp"
     }
 }
